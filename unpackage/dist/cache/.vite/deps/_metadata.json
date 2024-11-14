@@ -1,0 +1,25 @@
+{
+  "hash": "8c074428",
+  "configHash": "9e439328",
+  "lockfileHash": "a9e5fd6c",
+  "browserHash": "199884fa",
+  "optimized": {
+    "uview-plus": {
+      "src": "../../../../../node_modules/uview-plus/index.js",
+      "file": "uview-plus.js",
+      "fileHash": "596de669",
+      "needsInterop": false
+    },
+    "sass": {
+      "src": "../../../../../../../../../../../Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/compile-dart-sass/node_modules/sass/sass.default.dart.js",
+      "file": "sass.js",
+      "fileHash": "9b433c9b",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-TDUMLE5V": {
+      "file": "chunk-TDUMLE5V.js"
+    }
+  }
+}

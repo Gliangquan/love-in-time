@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/pagetemplate/pagetemplate",
+    "pages/index/index",
+    "pages/page2/page2",
+    "pages/page3/page3",
+    "pages/mine/mine",
+    "pages/dishdetails/dishdetails"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "home"
+      },
+      {
+        "pagePath": "pages/page2/page2",
+        "text": "page2"
+      },
+      {
+        "pagePath": "pages/page3/page3",
+        "text": "page3"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "mine"
+      }
+    ],
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black"
+  },
+  "usingComponents": {}
+}

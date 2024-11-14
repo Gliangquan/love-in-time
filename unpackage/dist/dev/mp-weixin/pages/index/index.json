@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "slide-menu-vue": "../../components/slideMenu/slideMenu"
+  }
+}

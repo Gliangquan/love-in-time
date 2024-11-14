@@ -1,0 +1,69 @@
+
+.menu-bar.data-v-89c28a0e {
+  width: 80%;
+  position: fixed;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  padding: 10px 20px;
+  box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  -webkit-tap-highlight-color: transparent;
+  background: #ffffff;
+	/* 毛玻璃 高斯模糊 */
+	-webkit-backdrop-filter: blur(10px) !important;
+	        backdrop-filter: blur(10px) !important;
+	background-color: rgb(255, 255, 255, 0.2) !important;
+}
+.menu-list.data-v-89c28a0e {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.menu-item.data-v-89c28a0e {
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.menu-content.data-v-89c28a0e {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  padding: 5px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.menu-content.active-bg.data-v-89c28a0e {
+  background-color: rgba(213, 150, 223, 0.3);
+}
+.menu-icon.data-v-89c28a0e {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5rpx;
+}
+.menu-text.data-v-89c28a0e {
+  font-size: 10px;
+  color: #4285f4;
+}
+
+/* 动态背景指示器 */
+.indicator.data-v-89c28a0e {
+  position: absolute;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(213, 150, 223, 0.3);
+  border-radius: 20px;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}

@@ -1,0 +1,85 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u--(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^z-(.*)": "@zebra-ui/swiper/components/z-$1/z-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path" : "pages/pagetemplate/pagetemplate",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/index/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/page2/page2",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/page3/page3",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/mine/mine",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/dishdetails/dishdetails",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		}
+	],
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "home"
+			},{
+				"pagePath": "pages/page2/page2",
+				"text": "page2"
+			},{
+				"pagePath": "pages/page3/page3",
+				"text": "page3"
+			},{
+				"pagePath": "pages/mine/mine",
+				"text": "mine"
+			}
+		],
+		"custom": true, // 自定义TabBar
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black"
+	},
+		
+	"globalStyle": {
+		"navigationStyle": "custom", // 隐藏默认的导航栏
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

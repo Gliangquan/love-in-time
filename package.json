@@ -1,0 +1,27 @@
+{
+    "id": "Madman-tabBar",
+    "name": "自定义底部导航 tabBar 凸起展示效果",
+    "displayName": "自定义底部导航 tabBar 凸起展示效果",
+    "version": "1.0.0",
+    "description": "自定义底部导航样式，IOS底部黑条适配，两种文字展示样式，自定义是否凸起样式",
+    "keywords": [
+        "底部导航",
+        "tabBar",
+        "自定义导航"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    },
+    "dependencies": {
+        "uview-plus": "^3.3.40",
+        "uview-ui": "^2.0.38",
+        "vue-router": "^4.4.5"
+    },
+    "devDependencies": {
+        "sass": "^1.80.6",
+        "sass-loader": "^10.5.2"
+    }
+}

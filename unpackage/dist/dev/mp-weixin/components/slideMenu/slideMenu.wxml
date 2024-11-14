@@ -1,0 +1,1 @@
+<view class="carousel data-v-5b0766ab" bindtouchstart="{{b}}" bindtouchmove="{{c}}" bindtouchend="{{d}}"><view wx:for="{{a}}" wx:for-item="item" wx:key="b" class="{{['data-v-5b0766ab', 'carousel-item', item.c]}}" style="{{item.d}}"><view class="content data-v-5b0766ab">{{item.a}}</view><button class="carousel-button data-v-5b0766ab">按钮</button></view></view>

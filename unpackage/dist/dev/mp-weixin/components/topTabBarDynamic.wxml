@@ -1,0 +1,1 @@
+<view class="menu-bar data-v-33372f63"><view wx:if="{{a}}" class="back-button data-v-33372f63" bindtap="{{c}}"><image class="backicon data-v-33372f63" src="{{b}}" alt="icon"/></view><view class="title data-v-33372f63">{{d}}</view></view>

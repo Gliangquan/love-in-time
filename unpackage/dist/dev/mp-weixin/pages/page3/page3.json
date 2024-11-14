@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "dish-item-vue": "../../components/dishItem/dishItem"
+  }
+}
