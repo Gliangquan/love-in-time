@@ -18,7 +18,8 @@
     "dependencies": {
         "uview-plus": "^3.3.40",
         "uview-ui": "^2.0.38",
-        "vue-router": "^4.4.5"
+        "vue-router": "^4.4.5",
+        "vuex": "^4.0.2"
     },
     "devDependencies": {
         "sass": "^1.80.6",

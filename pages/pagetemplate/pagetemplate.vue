@@ -1,6 +1,6 @@
 <template>
   <view>
-		<topTabBarDynamicVue title="Title" :showBackButton='true' />
+		<!-- <topTabBarDynamicVue title="Title" :showBackButton='true' /> -->
 		
     <indeVue v-if=" PageCur === '/pages/index/index' " />
     <page2Vue v-if=" PageCur === '/pages/page2/page2' " />
@@ -37,8 +37,8 @@ export default {
   },
   data() {
     return {
-      selectedIndex: 2, // 初始化选中项
-      PageCur: '/pages/page3/page3', // 默认页面
+      selectedIndex: 1, // 初始化选中项
+      PageCur: '/pages/page2/page2', // 默认页面
     };
   },
   methods: {

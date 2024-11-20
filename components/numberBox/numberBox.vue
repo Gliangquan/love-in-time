@@ -1,5 +1,5 @@
 <template>
-  <div class="uni-number-box">
+  <div class="number-box">
     <div
       @mousedown.prevent="handleMouseDown('minus')"
       @mouseup.prevent="handleMouseUp('minus')"
@@ -23,13 +23,11 @@
 </template>
 
 <script>
-import { Logger } from 'sass';
 import { ref, defineComponent, watch } from 'vue';
 
 export default defineComponent({
   name: 'numberBox',
   props: {
-    // 传入的初始数字，默认为0
     initialValue: {
       type: Number,
       default: 0
@@ -67,7 +65,6 @@ export default defineComponent({
     const isPlusPressed = ref(false);
 
     const handleMouseDown = (type) => {
-			console.log("down");
       if (type === 'minus') {
         isMinusPressed.value = true;
       } else if (type === 'plus') {
@@ -76,7 +73,6 @@ export default defineComponent({
     };
 
     const handleMouseUp = (type) => {
-			console.log("up");
       if (type === 'minus') {
         isMinusPressed.value = false;
       } else if (type === 'plus') {
@@ -99,30 +95,37 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.uni-number-box {
-  display: flex;
-  align-items: center;
+	.number-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		-webkit-tap-highlight-color: transparent;
 	}
 
- .num-value {
-    width: 10%;
-    background-color: #ffd9eb;
+	.num-value {
+		 display: flex;
+		 justify-content: center;
+		 min-width: 30px;
+		 font-size: 18px;
   }
 
  .minus-btn {
+	 background-color: #E5DDFF;
   }
 
  .plus-btn {
+	 background-color: #A289F8;
   }
 
  .num-btn {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+		
   }
 
  .backicon {

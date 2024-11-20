@@ -1,4 +1,11 @@
 {
   "navigationBarTitleText": "",
-  "usingComponents": {}
+  "usingComponents": {
+    "number-box": "../../components/numberBox/numberBox",
+    "top-tab-bar-dynamic-vue": "../../components/topTabBarDynamic",
+    "u-text": "../../node-modules/uview-plus/components/u-text/u-text",
+    "u-divider": "../../node-modules/uview-plus/components/u-divider/u-divider",
+    "u-rate": "../../node-modules/uview-plus/components/u-rate/u-rate",
+    "u--text": "../../node-modules/uview-plus/components/u-text/u-text"
+  }
 }

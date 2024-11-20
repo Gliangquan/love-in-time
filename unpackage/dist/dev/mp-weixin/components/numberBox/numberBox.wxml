@@ -1,0 +1,1 @@
+<view class="number-box"><view catchmousedown="{{b}}" catchmouseup="{{c}}" bindtap="{{d}}" class="minus-btn num-btn"><image src="{{a}}" class="backicon" alt="icon"/></view><view class="num-value"><label>{{e}}</label></view><view catchmousedown="{{g}}" catchmouseup="{{h}}" bindtap="{{i}}" class="plus-btn num-btn"><image src="{{f}}" class="backicon" alt="icon"/></view></view>

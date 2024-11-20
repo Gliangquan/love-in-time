@@ -7,8 +7,11 @@
 			:key="index" 
 			:class="['carousel-item', { active: currentIndex === index }]" 
 			:style="itemStyle(index)">
-			<div class="content">{{ item }}</div>
-			<button class="carousel-button">按钮</button>
+			
+			<view class="content">
+				<image :src=item.img style="width: 100%;  height: 100%;"></image>
+			</view>
+			
 		</div>
 	</div>
 </template>
@@ -18,7 +21,20 @@ export default {
 	name: 'SimpleCarousel',
 	data() {
 		return {
-			items: ['框1', '框2', '框3', '框4', '框5'],
+			items: [
+				{
+					img: '/static/home/home-img-1.png'
+				},{
+					img: '/static/home/home-img-2.png'
+				},{
+					img: '/static/home/home-img-3.png'
+				},{
+					img: '/static/home/home-img-4.png'
+				},{
+					img: '/static/home/home-img-5.png'
+				},{
+					img: '/static/home/home-img-6.png'
+				}],
 			currentIndex: 2,
 			startX: 0,
 			offsetX: 0,
@@ -129,20 +145,26 @@ export default {
 	display: flex;
 	top: 10%;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	border-radius: 15px;
-	background-color: #e0e0e0;
-	box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.2);
+	
+	background-color: rgb(0, 0, 0, 0.1);
+	/* box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.1); */
 	transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .carousel-item.active .content {
 	font-size: 1.5em;
 	color: #333;
 }
+
 .content {
-	font-size: 1em;
-	color: #888;
+	width: 100%;
+	height: 152px;
+	height: inherit;
+	
+	background-color: rgb(0, 0, 0, 0);
 }
+
 .carousel-button {
 	position: absolute;
 	top: 100%;

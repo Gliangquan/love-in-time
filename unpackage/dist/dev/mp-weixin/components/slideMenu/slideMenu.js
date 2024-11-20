@@ -4,7 +4,26 @@ const _sfc_main = {
   name: "SimpleCarousel",
   data() {
     return {
-      items: ["框1", "框2", "框3", "框4", "框5"],
+      items: [
+        {
+          img: "/static/home/home-img-1.png"
+        },
+        {
+          img: "/static/home/home-img-2.png"
+        },
+        {
+          img: "/static/home/home-img-3.png"
+        },
+        {
+          img: "/static/home/home-img-4.png"
+        },
+        {
+          img: "/static/home/home-img-5.png"
+        },
+        {
+          img: "/static/home/home-img-6.png"
+        }
+      ],
       currentIndex: 2,
       startX: 0,
       offsetX: 0,
@@ -82,7 +101,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
     a: common_vendor.f($data.items, (item, index, i0) => {
       return {
-        a: common_vendor.t(item),
+        a: item.img,
         b: index,
         c: common_vendor.n({
           active: $data.currentIndex === index

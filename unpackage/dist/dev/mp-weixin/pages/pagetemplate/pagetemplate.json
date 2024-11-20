@@ -2,7 +2,6 @@
   "navigationBarTitleText": "",
   "usingComponents": {
     "btn-tab-bar-dynamic-vue": "../../components/btnTabBarDynamic",
-    "top-tab-bar-dynamic-vue": "../../components/topTabBarDynamic",
     "inde-vue": "../index/index",
     "page2-vue": "../page2/page2",
     "page3-vue": "../page3/page3",

@@ -2,15 +2,17 @@
     <view class="container-page3">
         <scroll-view class="scroll-view" scroll-y="true">
             <view class="list">
-                <view class="list-column" v-for="(item, index) in list" :key="index">
-                    <dishItemVue
-                        v-for="(dish, dishIndex) in item"
-                        :key="dishIndex"
-                        :imgSrc="dish.imgSrc"
-                        :dishName="dish.dishName"
-                        :dishHub="dish.dishHub"
-                        :price="dish.price"
-                    />
+                <view class="list-column" v-for="(item, index) in list" :key="index" >
+										<dishItemVue
+											v-for="(dish, dishIndex) in item"
+											:key="dishIndex"
+											:imgSrc="dish.imgSrc"
+											:dishName="dish.dishName"
+											:dishHub="dish.dishHub"
+											:price="dish.price"
+											@tap="todish(dish)"
+											@click="todish(dish)"
+										/>
                 </view>
             </view>
         </scroll-view>
@@ -19,6 +21,7 @@
 
 <script>
 import dishItemVue from '../../components/dishItem/dishItem.vue';
+import store from '../../utils/store.js';
 
 export default {
     name: "page3",
@@ -86,13 +89,19 @@ export default {
                     price: '8.99'
                 }
             ];
-
             // 将数据按列数分配到 `list` 的每一列
             data.forEach((item, index) => {
                 this.list[index % this.column].push(item);
             });
-        }
-    }
+        },
+				todish(dish) {
+					console.log(111);
+					store.commit('setSelectedDish', dish);
+					uni.navigateTo({
+							url: '/pages/dishdetails/dishdetails'
+					});
+				}
+		}
 };
 </script>
 

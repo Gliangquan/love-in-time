@@ -21,7 +21,7 @@ const _sfc_main = {
       // 上一次的时间
     };
   },
-  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$1],
+  mixins: [common_vendor.mpMixin, common_vendor.mixin, common_vendor.props$3],
   computed: {
     countDown() {
       return this.startVal > this.endVal;

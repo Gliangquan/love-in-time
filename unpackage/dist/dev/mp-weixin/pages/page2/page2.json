@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-search": "../../node-modules/uview-plus/components/u-search/u-search",
+    "u-button": "../../node-modules/uview-plus/components/u-button/u-button"
+  }
 }

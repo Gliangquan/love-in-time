@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("./common/vendor.js");
+const utils_store = require("./utils/store.js");
 const dishItemVue = () => "./components/dishItem/dishItem.js";
 const _sfc_main = {
   name: "page3",
@@ -72,6 +73,13 @@ const _sfc_main = {
       data.forEach((item, index) => {
         this.list[index % this.column].push(item);
       });
+    },
+    todish(dish) {
+      console.log(111);
+      utils_store.store.commit("setSelectedDish", dish);
+      common_vendor.index.navigateTo({
+        url: "/pages/dishdetails/dishdetails"
+      });
     }
   }
 };
@@ -86,8 +94,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         a: common_vendor.f(item, (dish, dishIndex, i1) => {
           return {
             a: dishIndex,
-            b: "c9edc2b4-0-" + i0 + "-" + i1,
-            c: common_vendor.p({
+            b: common_vendor.o(($event) => $options.todish(dish), dishIndex),
+            c: common_vendor.o(($event) => $options.todish(dish), dishIndex),
+            d: "c9edc2b4-0-" + i0 + "-" + i1,
+            e: common_vendor.p({
               imgSrc: dish.imgSrc,
               dishName: dish.dishName,
               dishHub: dish.dishHub,
