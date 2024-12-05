@@ -95,10 +95,9 @@ export default {
             });
         },
 				todish(dish) {
-					console.log(111);
 					store.commit('setSelectedDish', dish);
 					uni.navigateTo({
-							url: '/pages/dishdetails/dishdetails'
+							url: '/pages/dish/dishdetails'
 					});
 				}
 		}

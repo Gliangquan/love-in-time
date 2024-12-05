@@ -7,7 +7,10 @@ if (!Math) {
   "./pages/page2/page2.js";
   "./pages/page3/page3.js";
   "./pages/mine/mine.js";
-  "./pages/dishdetails/dishdetails.js";
+  "./pages/dish/dishdetails.js";
+  "./pages/mine/login.js";
+  "./pages/dish/loverAddDish.js";
+  "./pages/dish/loverAddCategories.js";
 }
 const _sfc_main = {
   name: "App"

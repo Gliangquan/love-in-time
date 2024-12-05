@@ -1,6 +1,6 @@
 <template>
   <view class="container-page2">
-    <topTabBarDynamicVue title="Title" :showBackButton="true" />
+    <topTabBarDynamicVue :title="dishitem.dishName" :showBackButton="true" />
 
     <scroll-view class="scroll-view-page2" scroll-y="true">
       <swiper class="swiper-box" @change="change" :current="swiperDotIndex">
@@ -70,14 +70,14 @@
             <u--text text="Quantity" color="#090F24" size="26px"></u--text>
           </view>
           <view style="padding-right: 52rpx;">
-            <numberBox :initialValue="0" @update:value="handleValueUpdate" />
+            <numberBox @update:value="handleValueUpdate" />
           </view>
         </view>
 
         <view class="btn-price-view">
           <view style="flex: 1; color: #A3A3A3; font-size: 14px;">
             <p style="margin: 0;">Price</p>
-            <p style="margin: 0; font-size: 24px; font-weight: bold; color: #090F24;">${{ totlePrice }}</p>
+            <p style="margin: 0; font-size: 24px; font-weight: bold; color: #090F24;">${{ totlePrice}}</p>
           </view>
           <view style="display: flex; gap: 10px;">
             <button class="btn-shopping">
@@ -98,6 +98,7 @@ import { reactive, ref, computed, onMounted } from 'vue'; // 引入 reactive, re
 import numberBox from '@/components/numberBox/numberBox.vue';
 import topTabBarDynamicVue from '../../components/topTabBarDynamic.vue';
 import store from '../../utils/store.js';
+import request from '@/common/request.js';
 
 export default {
   components: {
@@ -105,15 +106,12 @@ export default {
     topTabBarDynamicVue,
   },
   setup() {
-    const dishitem = reactive({
+    const dishitem = ref({
       imgSrc: [
         "https://img.js.design/assets/img/66b48af16f38077bbb6fc891.png#9fe61a693049c3aa850128b76044780c",
         "https://img.js.design/assets/img/66b48af16f38077bbb6fc891.png#9fe61a693049c3aa850128b76044780c",
         "https://img.js.design/assets/img/66b48af16f38077bbb6fc891.png#9fe61a693049c3aa850128b76044780c",
-      ],
-      dishName: "菜品名称",
-      dishPrice: 20,
-      description: "这是菜品描述，这是菜品描述，这是菜品描述。这是菜品描述这是菜品描述这是菜品描述",
+      ]
     });
 
     const showLineNum = ref(1);
@@ -128,29 +126,38 @@ export default {
 
     const selectedIndex = ref(0);
 
+    const count = ref(10);
+    const value = ref(6);
+		
+		const dish_count = ref(0)
+		
     const selectMenu = (index) => {
       selectedIndex.value = index;
     };
+		
+		const totlePrice = ref(0);
+		
+		const handleValueUpdate = (num)=>{
+			totlePrice.value = num * dishitem.value.dishPrice;
+		}
 
-    const count = ref(6);
-    const value = ref(2);
+		onMounted(async () => {
+			const dish = store.state.selectedDish;
+			console.log(dish);
+			if (dish) {
+				dishitem.value.dishName = dish.dishName || "菜品名称";
+				dishitem.value.dishPrice = dish.dishPrice || 0;
+				dishitem.value.description = dish.dishDescription || "暂无描述";
+			}
+		});
+		
 
-    const totlePrice = computed(() => {
-      return dishitem.dishPrice * value.value;
-    });
-
-    onMounted(() => {
-      const dish = store.state.selectedDish;
-      if (dish && dish.imgSrc) {
-				// 使用 unshift 插入到首项，而不是直接覆盖
-				dishitem.imgSrc.unshift(dish.imgSrc); 
-      }
-    });
 
     return {
       dishitem,
       count,
       value,
+			dish_count,
       totlePrice,
       showLineNum,
       clickMoreText,
@@ -158,6 +165,7 @@ export default {
       menuItems,
       selectedIndex,
       selectMenu,
+			handleValueUpdate
     };
   },
 };

@@ -19,9 +19,11 @@
         "uview-plus": "^3.3.40",
         "uview-ui": "^2.0.38",
         "vue-router": "^4.4.5",
-        "vuex": "^4.0.2"
+        "vuex": "^4.0.2",
+        "weapp-cookie": "^1.4.8"
     },
     "devDependencies": {
+        "baikaifa-openapi-tool": "^0.1.23",
         "sass": "^1.80.6",
         "sass-loader": "^10.5.2"
     }

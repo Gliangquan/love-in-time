@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "usingComponents": {
+    "u-button": "../../node-modules/uview-plus/components/u-button/u-button",
     "u-avatar": "../../node-modules/uview-plus/components/u-avatar/u-avatar",
     "u-count-to": "../../node-modules/uview-plus/components/u-count-to/u-count-to"
   }

@@ -1,0 +1,82 @@
+
+.container-addShop.data-v-5d0b33fd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  padding-bottom: 152rpx;
+}
+.category-list.data-v-5d0b33fd {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 152rpx;
+  width: 100%;
+}
+.category-item.data-v-5d0b33fd {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.item-content.data-v-5d0b33fd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-title.data-v-5d0b33fd {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.item-actions.data-v-5d0b33fd {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.item-left.data-v-5d0b33fd,
+.item-center.data-v-5d0b33fd,
+.item-right.data-v-5d0b33fd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-category.data-v-5d0b33fd {
+  position: fixed;
+  bottom: 120rpx; /* 调整为让“确定”按钮有足够空间 */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20rpx;
+  border: 1px solid #f36;
+  border-radius: 50rpx;
+  text-align: center;
+  color: #f36;
+  font-size: 32rpx;
+  width: 90%;
+  background-color: #fff;
+  box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.confirm-button.data-v-5d0b33fd {
+  position: fixed;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20rpx;
+  border: 1px solid #4caf50;
+  border-radius: 50rpx;
+  text-align: center;
+  color: #4caf50;
+  font-size: 32rpx;
+  width: 90%;
+  background-color: #fff;
+	box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* 红色删除按钮 */
+.delete-red.data-v-5d0b33fd {
+  color: red;
+}

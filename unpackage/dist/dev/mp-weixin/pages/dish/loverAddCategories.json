@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "popup-wrapper": "../../components/PopupManager/PopupManager",
+    "top-tab-bar-dynamic-vue": "../../components/topTabBarDynamic"
+  }
+}

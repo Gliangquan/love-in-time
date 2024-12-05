@@ -1,15 +1,25 @@
 {
-  "hash": "8844a013",
+  "hash": "5c472618",
   "configHash": "9e439328",
-  "lockfileHash": "7c1cf8b2",
-  "browserHash": "be0d86e5",
+  "lockfileHash": "e05d20f7",
+  "browserHash": "93a5561f",
   "optimized": {
     "uview-plus": {
       "src": "../../../../../node_modules/uview-plus/index.js",
       "file": "uview-plus.js",
-      "fileHash": "74b7de47",
+      "fileHash": "f30d0aef",
       "needsInterop": false
+    },
+    "weapp-cookie": {
+      "src": "../../../../../node_modules/weapp-cookie/dist/weapp-cookie.umd.js",
+      "file": "weapp-cookie.js",
+      "fileHash": "cbef6663",
+      "needsInterop": true
     }
   },
-  "chunks": {}
+  "chunks": {
+    "chunk-Y2F7D3TJ": {
+      "file": "chunk-Y2F7D3TJ.js"
+    }
+  }
 }

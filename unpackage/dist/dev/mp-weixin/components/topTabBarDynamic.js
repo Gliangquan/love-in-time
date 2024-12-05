@@ -15,7 +15,14 @@ const _sfc_main = {
   },
   methods: {
     goBack() {
-      common_vendor.index.navigateBack();
+      let pages = getCurrentPages();
+      if (pages.length > 1) {
+        common_vendor.index.navigateBack();
+      } else {
+        common_vendor.index.redirectTo({
+          url: `/pages/pagetemplate/pagetemplate?id=${0}`
+        });
+      }
     }
   }
 };

@@ -22,8 +22,15 @@ export default {
 	},
 	methods: {
 		goBack() {
-			// 使用 uni.navigateBack() 以支持 uniapp 的页面返回
-			uni.navigateBack();
+		    // 获取当前页面栈
+		    let pages = getCurrentPages();
+		    if (pages.length > 1) {
+		        uni.navigateBack();
+		    } else {
+		        uni.redirectTo({
+		            url: `/pages/pagetemplate/pagetemplate?id=${0}`,
+		        });
+		    }
 		}
 	}
 };

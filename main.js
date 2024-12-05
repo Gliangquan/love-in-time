@@ -1,6 +1,6 @@
 import App from './App'
 import uviewPlus from 'uview-plus'
-
+import 'weapp-cookie'
 
 // #ifndef VUE3
 

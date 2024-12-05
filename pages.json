@@ -27,7 +27,8 @@
 			"path" : "pages/page2/page2",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh": true //配置后，可以下拉刷新，上拉加载`
 			}
 		},
 		{
@@ -45,7 +46,28 @@
 			}
 		},
 		{
-			"path" : "pages/dishdetails/dishdetails",
+			"path" : "pages/dish/dishdetails",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/mine/login",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/dish/loverAddDish",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/dish/loverAddCategories",
 			"style" : 
 			{
 				"navigationBarTitleText" : ""

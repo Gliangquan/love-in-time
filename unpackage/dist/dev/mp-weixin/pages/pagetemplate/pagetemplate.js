@@ -23,11 +23,21 @@ const _sfc_main = {
   },
   data() {
     return {
-      selectedIndex: 1,
+      selectedIndex: 0,
       // 初始化选中项
-      PageCur: "/pages/page2/page2"
+      PageCur: "/pages/index/index"
       // 默认页面
     };
+  },
+  onLoad(options) {
+    const id = Number(options.id);
+    if (!isNaN(id) && id >= 0 && id < pages.length) {
+      this.selectedIndex = id;
+      this.PageCur = pages[id];
+    } else {
+      this.selectedIndex = 0;
+      this.PageCur = pages[0];
+    }
   },
   methods: {
     handleMenuSelect(index) {

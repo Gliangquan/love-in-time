@@ -37,10 +37,21 @@ export default {
   },
   data() {
     return {
-      selectedIndex: 1, // 初始化选中项
-      PageCur: '/pages/page2/page2', // 默认页面
+      selectedIndex: 0, // 初始化选中项
+      PageCur: '/pages/index/index', // 默认页面
     };
   },
+	onLoad(options) {
+		const id = Number(options.id); // 确保 id 是一个数字
+		if (!isNaN(id) && id >= 0 && id < pages.length) {
+			this.selectedIndex = id;
+			this.PageCur = pages[id];
+		} else {
+			// 设置默认页面或其他处理逻辑
+			this.selectedIndex = 0;
+			this.PageCur = pages[0];
+		}
+	},
   methods: {
     handleMenuSelect(index) {
       this.PageCur = pages[index]

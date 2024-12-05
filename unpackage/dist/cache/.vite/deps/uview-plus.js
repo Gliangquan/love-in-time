@@ -1,3 +1,5 @@
+import "./chunk-Y2F7D3TJ.js";
+
 // ../../../../../../Users/liangquan/Desktop/programs/小程序/wx-lover/node_modules/uview-plus/libs/vue.js
 var defineMixin = (options) => {
   return options;

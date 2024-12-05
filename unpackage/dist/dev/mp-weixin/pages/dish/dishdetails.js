@@ -10,15 +10,12 @@ const _sfc_main = {
     topTabBarDynamicVue
   },
   setup() {
-    const dishitem = common_vendor.reactive({
+    const dishitem = common_vendor.ref({
       imgSrc: [
         "https://img.js.design/assets/img/66b48af16f38077bbb6fc891.png#9fe61a693049c3aa850128b76044780c",
         "https://img.js.design/assets/img/66b48af16f38077bbb6fc891.png#9fe61a693049c3aa850128b76044780c",
         "https://img.js.design/assets/img/66b48af16f38077bbb6fc891.png#9fe61a693049c3aa850128b76044780c"
-      ],
-      dishName: "菜品名称",
-      dishPrice: 20,
-      description: "这是菜品描述，这是菜品描述，这是菜品描述。这是菜品描述这是菜品描述这是菜品描述"
+      ]
     });
     const showLineNum = common_vendor.ref(1);
     const clickMoreText = common_vendor.ref("More...");
@@ -28,31 +25,38 @@ const _sfc_main = {
     };
     const menuItems = ["详情", "评价"];
     const selectedIndex = common_vendor.ref(0);
+    const count = common_vendor.ref(10);
+    const value = common_vendor.ref(6);
+    const dish_count = common_vendor.ref(0);
     const selectMenu = (index) => {
       selectedIndex.value = index;
     };
-    const count = common_vendor.ref(6);
-    const value = common_vendor.ref(2);
-    const totlePrice = common_vendor.computed(() => {
-      return dishitem.dishPrice * value.value;
-    });
-    common_vendor.onMounted(() => {
+    const totlePrice = common_vendor.ref(0);
+    const handleValueUpdate = (num) => {
+      totlePrice.value = num * dishitem.value.dishPrice;
+    };
+    common_vendor.onMounted(async () => {
       const dish = utils_store.store.state.selectedDish;
-      if (dish && dish.imgSrc) {
-        dishitem.imgSrc.unshift(dish.imgSrc);
+      console.log(dish);
+      if (dish) {
+        dishitem.value.dishName = dish.dishName || "菜品名称";
+        dishitem.value.dishPrice = dish.dishPrice || 0;
+        dishitem.value.description = dish.dishDescription || "暂无描述";
       }
     });
     return {
       dishitem,
       count,
       value,
+      dish_count,
       totlePrice,
       showLineNum,
       clickMoreText,
       clickMoreBtn,
       menuItems,
       selectedIndex,
-      selectMenu
+      selectMenu,
+      handleValueUpdate
     };
   }
 };
@@ -76,7 +80,7 @@ if (!Math) {
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
     a: common_vendor.p({
-      title: "Title",
+      title: $setup.dishitem.dishName,
       showBackButton: true
     }),
     b: common_vendor.f(4, (item, index, i0) => {
@@ -145,13 +149,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       color: "#090F24",
       size: "26px"
     }),
-    v: common_vendor.o(_ctx.handleValueUpdate),
-    w: common_vendor.p({
-      initialValue: 0
-    })
+    v: common_vendor.o($setup.handleValueUpdate)
   } : {}, {
-    x: common_vendor.t($setup.totlePrice),
-    y: common_assets._imports_0
+    w: common_vendor.t($setup.totlePrice),
+    x: common_assets._imports_0
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render]]);

@@ -75,10 +75,9 @@ const _sfc_main = {
       });
     },
     todish(dish) {
-      console.log(111);
       utils_store.store.commit("setSelectedDish", dish);
       common_vendor.index.navigateTo({
-        url: "/pages/dishdetails/dishdetails"
+        url: "/pages/dish/dishdetails"
       });
     }
   }

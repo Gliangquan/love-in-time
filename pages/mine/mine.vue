@@ -1,18 +1,20 @@
 <template>  
 	<div class="container-mine">
 		<view class="loverBox">
+			<u-button @click="tologin()">点击登录</u-button>
+			<u-button @click="getlogin()">当前登录用户信息</u-button>
 			<view class="loverImg">
 				<view class="loverOne">
 					<u-avatar src="" shape="circle" class="avatar"></u-avatar>
 					<view class="loverName">
-						<text>Name1</text>
+						<text>{{ loverInfo.name_lover_a }}</text>
 					</view>
 				</view>
 				<div class="heart">❤️</div>
 				<view class="loverOne">
 					<u-avatar src="" shape="circle" class="avatar"></u-avatar>
 					<view class="loverName">
-						<text>Name2</text>
+						<text>{{ loverInfo.name_lover_b }}</text>
 					</view>
 				</view>			
 			</view>
@@ -29,10 +31,41 @@
 </template>
 
 <script>
+	import request from '../../common/request';
+	import { ref } from 'vue';
+	
 	export default {
 		name: "mine",
 		setup() {
-			return {};
+			const loverInfo = ref({
+					name_lover_a: 'BOY',
+					name_lover_b: 'GIRL'
+			});
+			const tologin = () => {
+					uni.navigateTo({
+							url: '/pages/mine/login'
+					});
+			};
+			const getlogin = async () =>{
+				try{
+					const response = await request.get('/lover/get/login');
+					if (response.code === 0) {
+						loverInfo.value.name_lover_a = response.data.loverName;
+					}else{
+						console.log("未登录！！");
+					}
+				}catch(e){
+					uni.showToast({
+						title: '请求失败，请稍后重试',
+						duration: 1000
+					});
+				}
+			}
+			return {
+					tologin,
+					getlogin,
+					loverInfo
+			};
 		}
 	}
 </script>
